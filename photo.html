@@ -1,0 +1,69 @@
+<script>
+    var h = 0;
+    function imageInvisible(){
+
+        if(h == 0){
+            var img = document.getElementById("i1");
+            // img.style.display = "none";
+            img.style.visibility = "hidden";
+            var but = document.getElementById("b1");
+            but.innerHTML = "Visible Me";
+            h = 1;
+            
+
+        }
+        else {
+            var img = document.getElementById("i1");
+            // img.style.display = "none";
+            img.style.visibility = "visible";
+            var but = document.getElementById("b1");
+            but.innerHTML = "Hide Me";
+            h = 0;
+            
+        }
+    r = setTimeout(imageInvisible,100);
+     
+    }
+    function stopBlink() {
+        clearTimeout(r);
+    }
+    // function imageVisible(){
+    //   var img2 = document.getElementById("i1");
+    //    img2.style.visibility = "visible";
+    //}
+
+</script>
+<style>
+#i1 {
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    left: 350px;
+    top: 150px;
+}
+#b1 {
+    position: absolute;
+    left: 450px;
+    top: 350px;
+}
+#b2 {
+    position: absolute;
+    left: 550px;
+    top: 350px;
+}
+#b3 {
+    position: absolute;
+    left: 550px;
+    top: 350px;
+}
+body {
+    background-color: aqua;
+}
+</style>
+<body onload="imageInvisible()">
+  <img src="top_image.png" alt="GLA" id="i1">  <br />
+  <button id="b1"  onclick="imageInvisible()">Hide Me</button>
+  <!-- <button id="b2"  onclick="imageVisible()">Visible Me</button> -->
+  <button id="b3" onclick="stopBlink()">Stop Blinking</button>
+
+</body>
